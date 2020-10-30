@@ -27,12 +27,12 @@ Remove
 ##  Now we will do some prep work to get your log file ready.  The first thing I usually do is
 ##  make sure that I delete any pre-existing variant of the log:
 
-filedelete 'directory$'duration-log.txt
+filedelete 'directory$'fricative-log.txt
 
 ##  Now I'm going to make a variable called "header_row$", then write that variable to the log file:
 
 header_row$ = "Filename" + tab$ + "phoneme" + tab$ + "Duration (ms.)" +  tab$ + "Center of gravity" + tab$ + "variance" +tab$ + "skewness" + tab$ + "kurtosis" + newline$
-header_row$ > 'directory$'duration-log.txt
+header_row$ > 'directory$'fricative-log.txt
 
 ##  Now we make a list of all the text grids in the directory we're using, and put the number of
 ##  filenames into the variable "number_of_files":
@@ -88,7 +88,7 @@ for j from 1 to number_files
 		skewness = Get skewness... 2
 		kurtosis = Get kurtosis... 2
                 duration = (end_vowel - begin_vowel) * 1000
-                fileappend "'directory$'duration-log.txt" 'object_name$''tab$''interval_label$''tab$''duration:3''tab$''center_of_gravity:3''tab$''std:3''tab$''skewness:3''tab$''kurtosis:3''newline$'
+                fileappend "'directory$'fricative-log.txt" 'object_name$''tab$''interval_label$''tab$''duration:3''tab$''center_of_gravity:3''tab$''std:3''tab$''skewness:3''tab$''kurtosis:3''newline$'
 		selectObject: "TextGrid 'object_name$'"
 		Remove tier: 1
 		select all
@@ -119,5 +119,4 @@ print All files have been processed.  What next?
 
 ## written by Katherine Crosswhite
 ## crosswhi@ling.rochester.edu
-
 ## modified by Abner Hernandez
